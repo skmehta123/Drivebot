@@ -50,18 +50,20 @@ def stats(update, context):
 
 def start(update, context):
     start_string = f'''
+Hey 👋 I'm Alive 😋🤣
+I am made by SK Mehta
 This bot can mirror all your links to Google Drive!
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("Repo", "https://github.com/breakdowns/slam-mirrorbot")
-    buttons.buildbutton("Support Group", "https://t.me/SlamMirrorSupport")
+    buttons.buildbutton("Youtube", "https://youtube.com/channel/UC5N3T3-ojhQmTF9uTAVbbpQ")
+    buttons.buildbutton("telegram", "https://t.me/gtgyan")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     LOGGER.info('UID: {} - UN: {} - MSG: {}'.format(update.message.chat.id, update.message.chat.username, update.message.text))
     uptime = get_readable_time((time.time() - botStartTime))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         if update.message.chat.type == "private" :
-            sendMessage(f"Hey I'm Alive 🙂\nSince: <code>{uptime}</code>", context.bot, update)
+            sendMessage(f"Hey 👋 I'm Alive 😋🤣\nI am made by SK Mehta\nSince: <code>{uptime}</code>", context.bot, update)
         else :
             update.effective_message.reply_photo(IMAGE_URL, start_string, parse_mode=ParseMode.MARKDOWN, reply_markup=reply_markup)
     else :
@@ -179,21 +181,22 @@ def bot_help(update, context):
 
 
 botcmds = [
+BotCommand(f'{BotCommands.StartCommand}', 'Start Bot'),
 BotCommand(f'{BotCommands.MirrorCommand}', 'Start Mirroring'),
-BotCommand(f'{BotCommands.TarMirrorCommand}','Upload tar (zipped) file'),
-BotCommand(f'{BotCommands.UnzipMirrorCommand}','Extract files'),
 BotCommand(f'{BotCommands.CloneCommand}','Copy file/folder to Drive'),
-BotCommand(f'{BotCommands.CountCommand}','Count file/folder of Drive link'),
+BotCommand(f'{BotCommands.ListCommand}',' [query] Searches files in Drive'),
 BotCommand(f'{BotCommands.WatchCommand}','Mirror YT-DL support link'),
 BotCommand(f'{BotCommands.TarWatchCommand}','Mirror Youtube playlist link as tar'),
+BotCommand(f'{BotCommands.StatusCommand}','Get Mirror Status message'),
+BotCommand(f'{BotCommands.StatsCommand}','Bot Usage Stats'),
+BotCommand(f'{BotCommands.SpeedCommand}','Check Speed of the host'),
 BotCommand(f'{BotCommands.CancelMirror}','Cancel a task'),
 BotCommand(f'{BotCommands.CancelAllCommand}','Cancel all tasks'),
 BotCommand(f'{BotCommands.DeleteCommand}','Delete file from Drive'),
-BotCommand(f'{BotCommands.ListCommand}',' [query] Searches files in Drive'),
-BotCommand(f'{BotCommands.StatusCommand}','Get Mirror Status message'),
-BotCommand(f'{BotCommands.StatsCommand}','Bot Usage Stats'),
+BotCommand(f'{BotCommands.TarMirrorCommand}','Upload tar (zipped) file'),
+BotCommand(f'{BotCommands.UnzipMirrorCommand}','Extract files'),
+BotCommand(f'{BotCommands.CountCommand}','Count file/folder of Drive link'),
 BotCommand(f'{BotCommands.HelpCommand}','Get Detailed Help'),
-BotCommand(f'{BotCommands.SpeedCommand}','Check Speed of the host'),
 BotCommand(f'{BotCommands.LogCommand}','Bot Log [owner/sudo only]'),
 BotCommand(f'{BotCommands.RestartCommand}','Restart bot [owner/sudo only]')]
 
