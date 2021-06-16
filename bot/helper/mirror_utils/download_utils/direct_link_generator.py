@@ -215,7 +215,7 @@ def github(url: str) -> str:
 
 def hxfile(url: str) -> str:
     """ Hxfile direct links generator
-    based on https://github.com/breakdowns/slam-mirrorbot """
+    based on https://github.com/skmehta123/torrbot """
     dl_url = ''
     try:
         link = re.findall(r'\bhttps?://.*hxfile\.co\S+', url)[0]
@@ -228,7 +228,7 @@ def hxfile(url: str) -> str:
 
 def anon(url: str) -> str:
     """ Anonfiles direct links generator
-    based on https://github.com/breakdowns/slam-mirrorbot """
+    based on https://github.com/skmehta123/torrbot """
     dl_url = ''
     try:
         link = re.findall(r'\bhttps?://.*anonfiles\.com\S+', url)[0]
@@ -241,7 +241,7 @@ def anon(url: str) -> str:
 
 def letsupload(url: str) -> str:
     """ Letsupload direct link generator
-    Based on https://github.com/breakdowns/slam-mirrorbot """
+    Based on https://github.com/skmehta123/torrbot """
     dl_url = ''
     try:
         link = re.findall(r'\bhttps?://.*letsupload\.io\S+', url)[0]
@@ -254,7 +254,7 @@ def letsupload(url: str) -> str:
 
 def fembed(link: str) -> str:
     """ Fembed direct link generator
-    Based on https://github.com/breakdowns/slam-mirrorbot """
+    Based on https://github.com/skmehta123/torrbot """
     bypasser = lk21.Bypass()
     dl_url=bypasser.bypass_fembed(link)
     lst_link = []
@@ -266,7 +266,7 @@ def fembed(link: str) -> str:
 
 def sbembed(link: str) -> str:
     """ Sbembed direct link generator
-    Based on https://github.com/breakdowns/slam-mirrorbot """
+    Based on https://github.com/skmehta123/torrbot """
     bypasser = lk21.Bypass()
     dl_url=bypasser.bypass_sbembed(link)
     lst_link = []
