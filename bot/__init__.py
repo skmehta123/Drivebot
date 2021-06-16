@@ -286,9 +286,9 @@ except KeyError:
 try:
     IMAGE_URL = getConfig('IMAGE_URL')
     if len(IMAGE_URL) == 0:
-        IMAGE_URL = 'https://telegra.ph/file/db03910496f06094f1f7a.jpg'
+        IMAGE_URL = 'https://images.hdqwalls.com/download/hacker-wide-1920x1080.jpg'
 except KeyError:
-    IMAGE_URL = 'https://telegra.ph/file/db03910496f06094f1f7a.jpg'
+    IMAGE_URL = 'https://images.hdqwalls.com/download/hacker-wide-1920x1080.jpg'
 
 IGNORE_PENDING_REQUESTS = False
 try:
